@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int i = 0, v = 0, c = 0;
+
+    printf("Enter a string (no spaces): ");
+    scanf("%s", str);
+
+    while (str[i] != '\0') {
+        char ch = str[i];
+        if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+            char lower = (ch >= 'A' && ch <= 'Z') ? ch + 32 : ch;
+            if (lower == 'a' || lower == 'e' || lower == 'i' || lower == 'o' || lower == 'u')
+                v++;
+            else
+                c++;
+        }
+        i++;
+    }
+
+    printf("Vowels = %d\n", v);
+    printf("Consonants = %d\n", c);
+    return 0;
+}
